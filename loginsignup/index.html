@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 id="form-title">Login</h2>
+            <form id="form" onsubmit="return validateForm()">
+                <div id="username-container" class="input-container">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username here" required>
+                </div>
+                <div class="input-container">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email here" required>
+                </div>
+                <div class="input-container">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password here" required>
+                </div>
+                <div id="confirm-password-container" class="input-container">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                </div>
+                <div id="login-buttons">
+                    <button type="button" id="mentor-login-btn" onclick="loginAsMentor()">Login as Mentor</button>
+                    <button type="button" id="mentee-login-btn" onclick="loginAsMentee()">Login as Mentee</button>
+                </div>
+                <p class="toggle-form">
+                    Don't have an account? <a href="#" onclick="toggleForm()">Sign up here</a>.
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
