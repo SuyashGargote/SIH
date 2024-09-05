@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Explorer</title>
+    <link rel="stylesheet" href="mentor.css">
+</head>
+<body>
+    <header>
+        <h1 style="color:#4169e1">Explore Mentors</h1>
+        <input type="text" id="searchInput" placeholder="Search by ID or Domain..." onkeyup="filterCards()">
+    </header>
+
+    <main>
+        <section class="mentor-list">
+            <div class="mentor-card" data-id="samruddhi-frontend" data-domain="frontend">
+                <img src="mentor1.png" alt="Mentor 1">
+                <h2>Samruddhi Kadam</h2>
+                <p>Frontend Developer</p>
+                <button><a href="/profile/profile.html">View Profile</a></button>
+            </div>
+
+            <div class="mentor-card" data-id="suyash-backend" data-domain="backend">
+                <img src="mentor1.png" alt="Mentor 2">
+                <h2>Suyash Gargote</h2>
+                <p>Backend Developer</p>
+                <button><a href="/profile/profile.html">View Profile</a></button>
+            </div>
+
+            <div class="mentor-card" data-id="soham-aiml" data-domain="ai-ml">
+                <img src="mentor1.png" alt="Mentor 1">
+                <h2>Soham Chavan</h2>
+                <p>AI-ML Developer</p>
+                <button><a href="/profile/profile.html">View Profile</a></button>
+            </div>
+
+            <div class="mentor-card" data-id="shreyash-security" data-domain="security">
+                <img src="mentor1.png" alt="Mentor 2">
+                <h2>Shreyash Kadam</h2>
+                <p>System Security</p>
+                <button><a href="/profile/profile.html">View Profile</a></button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mentor Explorer</p>
+    </footer>
+
+    <script>
+        function filterCards() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.mentor-card');
+
+            cards.forEach(card => {
+                const id = card.getAttribute('data-id').toLowerCase();
+                const domain = card.getAttribute('data-domain').toLowerCase();
+                
+                if (id.includes(input) || domain.includes(input)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
